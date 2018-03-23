@@ -153,7 +153,7 @@ namespace Student
                 frm.studentId.Text = row.Cells["studentId"].Value.ToString();
                 frm.studentId.SelectionStart = frm.studentId.Text.Length;
                 frm.name.Text = row.Cells["studentName"].Value.ToString();
-                frm.selectname = row.Cells["studentName"].Value.ToString();
+                frm.selected = row.Cells["studentId"].Value.ToString();
                 frm.levelSection.Text = row.Cells["levelSection"].Value.ToString();
                 string gender = row.Cells["gender"].Value.ToString();
                 if (gender.Equals("Male")) frm.radioButton1.Checked = true; else frm.radioButton2.Checked = true;

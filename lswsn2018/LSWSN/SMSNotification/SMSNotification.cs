@@ -27,7 +27,7 @@ namespace SMSNotification
             {
                 var result = dbasmsnotification.selectBooking();
                 var today = DateTime.Today;
-                var booking = result.Where(a => a.returnDate.AddDays(-1) <= today && a.returnDate >= today); // 
+                var booking = result.Where(a => a.returnDate.AddDays(-1) <= today); //  && a.returnDate >= today
                 if (booking.Any())
                 {
                     //myDataGridView.DataSource = result.ToList();                    
@@ -77,7 +77,7 @@ namespace SMSNotification
                     string number = row.Cells[2].Value.ToString();
                     string name = row.Cells[1].Value.ToString();
                     string date = Convert.ToDateTime(row.Cells[3].Value).ToShortDateString();
-                    string finalMessage = "Hello " + name + " Please return the book at the library before " + date + " Thank you From: Belison National School.";
+                    string finalMessage = "Hello " + name + " Please return the book at the library your due date is " + date + " Thank you From: Belison National School.";
                     //string finalMessage = "Hello " + name + " We would like to remind you that the due date of your borrowed is " + date + " Please return at the library, Thank you From: Belison National School.";
                     data.number = number;
                     data.message = finalMessage;

@@ -75,13 +75,13 @@ namespace Manager.Student
 
         public void isExist(bool add, string data, string selectedname)
         {
-            string query = "SELECT * FROM student WHERE isActive = 1 AND name = '" + data + "' AND name <> @selectedname;";
+            string query = "SELECT * FROM student WHERE isActive = 1 AND studentId = '" + data + "' AND studentId <> @selected;";
             con.SqlQuery(query);
-            con.Cmd.Parameters.AddWithValue("@selectedname", selectedname);
+            con.Cmd.Parameters.AddWithValue("@selected", selectedname);
             con.NonQueryEx();
             int count = con.QueryEx().Rows.Count;
             if (add && count > 0 || add == false && count > 0)
-                throw new Exception("Student name already exist!");
+                throw new Exception("Student Id already exist!");
         }
     }
 }

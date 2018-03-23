@@ -16,7 +16,7 @@ namespace Student
     {
         dbaStudent dbastudent = new dbaStudent();
         public int id = 0;
-        public string selectname = String.Empty;
+        public string selected = String.Empty;
 
         public EStudent()
         {
@@ -42,7 +42,7 @@ namespace Student
                 data.address = address.Text.Trim();
 
                 bool type = id == 0 ? true : false;
-                dbastudent.isExist(type, data.name, selectname);
+                dbastudent.isExist(type, data.studentId, selected);
                 if (type)
                     dbastudent.insertStudent(data);
                 else
@@ -54,6 +54,8 @@ namespace Student
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message");
+                studentId.Clear();
+                studentId.Focus();
             }
         }
 
