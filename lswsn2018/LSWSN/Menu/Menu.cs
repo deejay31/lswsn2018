@@ -40,14 +40,15 @@ namespace Menu
         private void accessLevel()
         {
             btnBook.Visible = false;
-            btnSmsNotification.Visible = false;
+            //btnSmsNotification.Visible = false;
             btnReports.Visible = false;
             btnAccounts.Visible = false;
             btnSettings.Visible = false;
             btnBorrow.Location = new Point(0, 164);
             btnReturn.Location = new Point(0, 216);
-            btnAbout.Location = new Point(0, 268);
-            btnLogout.Location = new Point(0, 320);
+            btnSmsNotification.Location = new Point(0, 268);
+            btnAbout.Location = new Point(0, 320);
+            btnLogout.Location = new Point(0, 372);
         }
 
         private void _init()
